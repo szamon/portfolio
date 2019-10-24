@@ -2,6 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebPackPlugin = require("copy-webpack-plugin");
+const ghpages = require("gh-pages");
+
 module.exports = {
     entry: {
         main: "./src/index.js"
