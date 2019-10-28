@@ -2,7 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebPackPlugin = require("copy-webpack-plugin");
-const ghpages = require("gh-pages");
 
 module.exports = {
     entry: {
@@ -27,6 +26,7 @@ module.exports = {
         }),
         new CopyWebPackPlugin([{from: "./src/assets/images", to: "assets/images"}])
     ],
+    resolve: { extensions: ["js", "ts"] },
     module: {
         rules: [
             {
@@ -42,6 +42,11 @@ module.exports = {
                     }
                 }
             },
+            // {
+            //     test:/.js$/,
+            //     exclude: /node_modules/,
+            //     use: "eslint-loader"
+            // },
             {
                 test:[/.css$|.scss$/],
                 use: [
