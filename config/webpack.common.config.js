@@ -26,18 +26,16 @@ module.exports = {
         }),
         new CopyWebPackPlugin([{from: "./src/assets/images", to: "assets/images"}])
     ],
-    resolve: { extensions: ["js", "ts"] },
     module: {
         rules: [
             {
-                test:[/.js$|.ts$/],
+                test:[/.js$/],
                 exclude: /node_modules/,
                 use:{
                     loader: "babel-loader",
                     options: {
                         presets: [
-                            "@babel/preset-env",
-                            "@babel/typescript"
+                            "@babel/preset-env"
                         ]
                     }
                 }
